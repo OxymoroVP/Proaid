@@ -39,3 +39,5 @@ Objective of *assignment2* is to:
 
 ## Team 7
 blah blah
+Figma link: http://tiny.cc/czbytz
+
