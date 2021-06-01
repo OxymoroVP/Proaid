@@ -11,8 +11,6 @@ This repository is a complete project made by students at the Aristotle Universi
 * develop the User Stories (behavior scenarios) in Gherkin language 
 * interact with UI/UX Design and implement static modeling into UML class diagram notation
 
-
-
 Objective of *assignment2* is to:
 * adjust corresponding design patterns to project 
 * struct a RESTful web-service using SwaggerHub
@@ -28,16 +26,30 @@ Objective of *assignment2* is to:
 * Unregistered patients database
 * External APIs [Calendar, Print, Email, Text message]
 
-## Functional Requirements
-* A user must be able to edit an appointment
-* A user must be able to review schedule
-* A user must be able to create 
+## Functional & Non-Functional Requirements
+User and System requirements of the application can be found in text format files. Refer to [FunctionalReq.txt](https://github.com/OxymoroVP/Proaid/blob/main/FunctionalReq.txt) / 
+[NonFunctionalReq.txt](https://github.com/OxymoroVP/Proaid/blob/main/NonFunctionalReq.txt) <br/>
+for an extended preview.
+
+## User Stories 
+User stories aim to facilitate sensemaking of the platform's functionality and they are implemented into 12 features, developed in <br/>*Gherkin language*.
+
+
+## GUI & UML class diagram notation
+###### UI/UX
+Figma project link: http://tiny.cc/czbytz
+###### UML - Static modeling
+Structural (or Static) view emphasizes the static structure of the system using objects, attributes, operations and relationships. It includes class diagrams and composite structure diagrams and it is developed in StarUML environment. Refer to files classes.mdj / use_case.mdj for the *class and use case* diagram correspondingly.  
+
+
+## Swagger API & Node-RED
 
 
 
+## Group 7
+Nikos Karagkiozidis<br/>
+Stavros Malakoudis <br/>
+Giorgos Tsakiridis<br/>
+Vasilis Polynopoulos
 
-
-## Team 7
-blah blah
-Figma link: http://tiny.cc/czbytz
 
