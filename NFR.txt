@@ -1,0 +1,5 @@
+ NFR1: The system must be able to demonstrate compliance with the GDPR
+ NFR2: The system must be able to not reach deadlock state 
+ NFR3: The system must be cross platform and browser compatible 
+ NFR4: The system must be able to offer validation processes on critical states
+ NFR5: The system must be able to endure high user traffic  
