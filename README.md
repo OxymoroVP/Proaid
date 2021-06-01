@@ -43,7 +43,7 @@ Structural (or Static) view emphasizes the static structure of the system using 
 
 
 ## Swagger API & Node-RED
-You can find the application API in SwaggerHub [here](https://app.swaggerhub.com/apis/Omada-Ergasias-7/Proaid/1.14.2#/) and the API documentation [here](https://app.swaggerhub.com/apis-docs/Omada-Ergasias-7/Proaid/1.14.2#/). The directory *python-flask-server* contains project files in order to develop the web-app with Python-Flask Framework and for Proaid API in .json format refer to *proaid-api-swagger.json*.
+You can find the application API in SwaggerHub [here](https://app.swaggerhub.com/apis/Omada-Ergasias-7/Proaid/1.14.2#/) and the API documentation [here](https://app.swaggerhub.com/apis-docs/Omada-Ergasias-7/Proaid/1.14.2#/). The directory *python-flask-server* contains project files in order to develop the web-app with Python-Flask Framework and for Proaid API in .json format can be found in *proaid-api-swagger.json*.
 
 Node-RED flows in .json format demonstrating the online services of the application are stored in *flows.json*.
  
