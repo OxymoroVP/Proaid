@@ -1,0 +1,12 @@
+ FR1: A user/doctor must be able to edit an appointment
+ FR2: A user/doctor must be able to review schedule
+ FR3: A user/doctor must be able to create new patient medical record
+ FR4: A user/doctor must be able to search a patient
+ FR5: A user/doctor must be able to request access/modification to patient medical record
+ FR6: A user/doctor must be able to modify patient medical record
+ FR7: A user/patient must be able to share their medical record
+ FR8: A user/patient must be able to request an appointment
+ FR9: A user/doctor must be able to approve/reject an appointment
+ FR10: A user/patient must be able to get informed before an appointment
+ FR11: A user/all must be able to edit notification attributes
+ FR12: A user/patient must be able to review scheduled appointments
