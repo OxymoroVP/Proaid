@@ -28,8 +28,7 @@ Objective of *assignment2* is to:
 
 ## Functional & Non-Functional Requirements
 User and System requirements of the application can be found in text format files. Refer to [FunctionalReq.txt](https://github.com/OxymoroVP/Proaid/blob/main/FunctionalReq.txt) / 
-[NonFunctionalReq.txt](https://github.com/OxymoroVP/Proaid/blob/main/NonFunctionalReq.txt) <br/>
-for an extended preview.
+[NonFunctionalReq.txt](https://github.com/OxymoroVP/Proaid/blob/main/NonFunctionalReq.txt) for an extended preview.
 
 ## User Stories 
 User stories aim to facilitate sensemaking of the platform's functionality and they are implemented into 12 features, developed in <br/>*Gherkin language*.
@@ -37,14 +36,17 @@ User stories aim to facilitate sensemaking of the platform's functionality and t
 
 ## GUI & UML class diagram notation
 ###### UI/UX
-Figma project link: http://tiny.cc/czbytz
+The early-stage Graphical User Interface of Proaid is designed using the Figma editor. Some of the vector templates illustrating platform's design are provided in folder GUI.
+Figma project link: [here](https://www.figma.com/file/kZ3lZFH6XMoVevtMztTlK2/Desktop-feel-(LOGIN)?node-id=0%3A1)
 ###### UML - Static modeling
-Structural (or Static) view emphasizes the static structure of the system using objects, attributes, operations and relationships. It includes class diagrams and composite structure diagrams and it is developed in StarUML environment. Refer to files classes.mdj / use_case.mdj for the *class and use case* diagram correspondingly.  
+Structural (or Static) view emphasizes the static structure of the system using objects, attributes, operations and relationships. It includes class diagrams and composite structure diagrams and it is developed in StarUML environment. Refer to files [classes.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/classes.mdj) / [use_case.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/use_case.mdj) for the *class and use case* diagram correspondingly.  
 
 
 ## Swagger API & Node-RED
+You can find the application API in SwaggerHub [here](https://app.swaggerhub.com/apis/Omada-Ergasias-7/Proaid/1.14.2#/) and the API documentation [here](https://app.swaggerhub.com/apis-docs/Omada-Ergasias-7/Proaid/1.14.2#/). The directory *python-flask-server* contains project files in order to develop the web-app with Python-Flask Framework and for Proaid API in .json format refer to *proaid-api-swagger.json*.
 
-
+Node-RED flows in .json format demonstrating the online services of the application are stored in *flows.json*.
+ 
 
 ## Group 7
 Nikos Karagkiozidis<br/>
