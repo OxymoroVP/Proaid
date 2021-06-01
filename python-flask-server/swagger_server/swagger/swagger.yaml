@@ -1,0 +1,827 @@
+---
+swagger: "2.0"
+info:
+  description: "This is the server for Proaid Company Ltd.  You can find out more\
+    \ about Proaid at [http://proaid.io](http://proaid.io)"
+  version: "1.14.2"
+  title: "Swagger Proaid server"
+  termsOfService: "http://proaid.io/terms/"
+  contact:
+    email: "apiteam@proaid.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "virtserver.swaggerhub.com"
+basePath: "/Omada-Ergasias-7/Proaid/1.14.2"
+schemes:
+- "https"
+- "http"
+paths:
+  /user/patient/{p_id}/medicalfolder:
+    get:
+      tags:
+      - "medicalfolder"
+      summary: "Get medical folder of a patient by patient id"
+      description: "FR6 - The doctor must be able to view their assigned patient's\
+        \ medical history"
+      operationId: "get_folder"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "medicalfolder"
+        description: "Medical folder to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/MedicalFolder"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.medicalfolder_controller"
+    put:
+      tags:
+      - "doctor"
+      summary: "Edit medical folder of a registered patient"
+      description: "FR6 - The doctor must be able to modify their assigned patient's\
+        \ medical history"
+      operationId: "edit_folder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "medicalfolder"
+        description: "Medical folder to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/MedicalFolder"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/patient/{p_id}:
+    get:
+      tags:
+      - "doctor"
+      summary: "Get registered patient's info"
+      description: "NOFR - The doctor must be able to view a registered patient's\
+        \ details"
+      operationId: "get_registered_patient"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/patient/{p_id}/request:
+    post:
+      tags:
+      - "patient"
+      summary: "Request an appointment at an available time and date"
+      description: "FR8 - The registered patient must be able to request an appointment\
+        \ at an available time and date"
+      operationId: "request_appointment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "request"
+        description: "A patient's request for an appointment"
+        required: true
+        schema:
+          $ref: "#/definitions/Request"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.patient_controller"
+  /user/patient/{p_id}/request/{r_id}:
+    put:
+      tags:
+      - "doctor"
+      summary: "Accept/Reject a request for appointment"
+      description: "FR9 - The doctor must be able to accept/reject a request for appointment"
+      operationId: "patient_ar_appointment"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - name: "r_id"
+        in: "path"
+        description: "Request's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Request not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/patient/{p_id}/appointment:
+    get:
+      tags:
+      - "patient"
+      summary: "Review all scheduled appointments"
+      description: "FR12 - The registered patient must be able to review their scheduled\
+        \ appointments"
+      operationId: "review_appointments"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "appointment"
+        description: "A list of a patient's booked appointments"
+        required: true
+        schema:
+          $ref: "#/definitions/PatientAppointment"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.patient_controller"
+  /user/patient/{p_id}/appointment/{a_id}:
+    get:
+      tags:
+      - "patient"
+      summary: "Review a scheduled appointment"
+      description: "FR12 - The registered patient must be able to review their scheduled\
+        \ appointments"
+      operationId: "review_appointment"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - name: "a_id"
+        in: "path"
+        description: "Appointment's id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Appointment not found"
+      x-swagger-router-controller: "swagger_server.controllers.patient_controller"
+    put:
+      tags:
+      - "patient"
+      summary: "Edit an appointment's notification"
+      description: "FR11 - The registered patient must be able to edit their notification\
+        \ method for their appointment"
+      operationId: "edit_notification"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - name: "a_id"
+        in: "path"
+        description: "Appointment's unique ID"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Appointment not found"
+      x-swagger-router-controller: "swagger_server.controllers.patient_controller"
+  /user/doctor/{d_id}/patient:
+    post:
+      tags:
+      - "doctor"
+      summary: "Creates a new unregistered patient"
+      description: "FR3 - The doctor must be able to create a new patient's history\
+        \ file"
+      operationId: "create_unregistered_patient"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "patient"
+        description: "Unregisterd Patient object to be created"
+        required: true
+        schema:
+          $ref: "#/definitions/Patient"
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Doctor not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/patient/{p_id}:
+    get:
+      tags:
+      - "doctor"
+      summary: "Get a patient by patient id"
+      description: "NOFR - The doctor must be able to view an unregistered  patient's\
+        \ details"
+      operationId: "get_unregistered_patient"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+    put:
+      tags:
+      - "doctor"
+      summary: "Edit by patient id"
+      description: "NOFR - The doctor can edit Unregistered Patient's attributes"
+      operationId: "edit_unregistered_patient"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+    delete:
+      tags:
+      - "doctor"
+      summary: "Delete unregistered patient"
+      description: "NOFR -The doctor can delete an Unregistered Patient"
+      operationId: "delete_unregistered_patient"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/patient/{p_id}/medicalfolder:
+    get:
+      tags:
+      - "doctor"
+      summary: "Get medical folder of a patient by patient id"
+      description: "NOFR -The doctor must be able to view an unregistered patient's\
+        \ medical folder"
+      operationId: "get_unregistered_folder"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "string"
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "medicalfolder"
+        description: "Medical folder to be received"
+        required: true
+        schema:
+          $ref: "#/definitions/MedicalFolder"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+    put:
+      tags:
+      - "doctor"
+      summary: "Doctor edits an unregistered patient's medical folder"
+      description: "FR6 - The doctor must be able to modify their assigned patient's\
+        \ medical history"
+      operationId: "edit_unregistered_folder"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "p_id"
+        in: "path"
+        description: "Patient's unique id"
+        required: true
+        type: "integer"
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "medicalfolder"
+        description: "Medical folder to be updated"
+        required: true
+        schema:
+          $ref: "#/definitions/MedicalFolder"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Patient not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/request:
+    post:
+      tags:
+      - "doctor"
+      summary: "Send a request"
+      description: "FR5 - The doctor must be able to request access to view and modify\
+        \ a patient’s medical history"
+      operationId: "doctor_send_request"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "request"
+        description: "The request to be sent"
+        required: true
+        schema:
+          $ref: "#/definitions/Request"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Doctor not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/request/{r_id}:
+    put:
+      tags:
+      - "patient"
+      summary: "Patient responds to doctor's request for medical folder sharing"
+      description: "FR7 - The registered patient must be able to share their medical\
+        \ history with a doctor"
+      operationId: "ar_medical_folder_access"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - name: "r_id"
+        in: "path"
+        description: "A request's unique id"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Request not found"
+      x-swagger-router-controller: "swagger_server.controllers.patient_controller"
+  /user/doctor/{d_id}/calendar:
+    get:
+      tags:
+      - "doctor"
+      summary: "View schedule"
+      description: "FR2 - The doctor must be able to review their schedule"
+      operationId: "get_schedule"
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "calendar"
+        description: "The doctor's displayed schedule"
+        required: true
+        schema:
+          $ref: "#/definitions/Calendar"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Doctor not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/calendar/appointment:
+    post:
+      tags:
+      - "doctor"
+      summary: "Create an appointment"
+      description: "NOFR - Doctor creates a new appointment through the schedule GUI"
+      operationId: "create_appointment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "appointment"
+        description: "New appointment"
+        required: true
+        schema:
+          $ref: "#/definitions/Appointment"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Doctor not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/calendar/appointment/{a_id}:
+    put:
+      tags:
+      - "doctor"
+      summary: "Edit an appointment"
+      description: "FR1 - The doctor must be able to edit their scheduled appointments"
+      operationId: "edit_appointment"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - name: "a_id"
+        in: "path"
+        description: "Appointment's unique ID"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "appointment"
+        description: "The appointment object"
+        required: true
+        schema:
+          $ref: "#/definitions/Appointment"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Appointment not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+    delete:
+      tags:
+      - "doctor"
+      summary: "Delete an appointment"
+      description: "FR1 - The doctor must be able to edit their scheduled appointments"
+      operationId: "delete_appointment"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - name: "a_id"
+        in: "path"
+        description: "Appointment's unique ID"
+        required: true
+        type: "integer"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Appointment not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+  /user/doctor/{d_id}/appointment:
+    post:
+      tags:
+      - "doctor"
+      summary: "Create an appointment"
+      description: "NOFR - Doctor creates an appointment through a menu"
+      operationId: "create_appointment_menu"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "d_id"
+        in: "path"
+        description: "Doctor's unique id"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "appointment"
+        description: "New appointment"
+        required: true
+        schema:
+          $ref: "#/definitions/Appointment"
+      responses:
+        "200":
+          description: "Successful operation"
+        "400":
+          description: "Invalid ID supplied"
+        "403":
+          description: "Access forbidden"
+        "404":
+          description: "Doctor not found"
+      x-swagger-router-controller: "swagger_server.controllers.doctor_controller"
+definitions:
+  MedicalFolder:
+    type: "object"
+    properties:
+      PatientDescription:
+        type: "string"
+      Allergies:
+        type: "array"
+        items:
+          type: "string"
+      Operations:
+        type: "array"
+        items:
+          type: "string"
+      Files:
+        type: "array"
+        items:
+          type: "object"
+          properties: {}
+    example:
+      PatientDescription: "PatientDescription"
+      Files:
+      - "{}"
+      - "{}"
+      Operations:
+      - "Operations"
+      - "Operations"
+      Allergies:
+      - "Allergies"
+      - "Allergies"
+  Patient:
+    type: "object"
+    properties:
+      Name:
+        type: "string"
+      Lastname:
+        type: "string"
+      UserID:
+        type: "integer"
+        format: "int64"
+      AMKA:
+        type: "string"
+      email:
+        type: "string"
+      Telephone:
+        type: "string"
+      folder:
+        type: "object"
+        properties: {}
+  Calendar:
+    properties:
+      Appointment:
+        type: "array"
+        items:
+          type: "object"
+          properties: {}
+    example:
+      Appointment:
+      - "{}"
+      - "{}"
+  Appointment:
+    type: "object"
+    properties:
+      appointmentID:
+        type: "string"
+      date:
+        type: "string"
+      time:
+        type: "string"
+      duration:
+        type: "number"
+      name:
+        type: "string"
+      comments:
+        type: "string"
+      notification:
+        type: "object"
+        properties:
+          time:
+            type: "string"
+          preference:
+            type: "string"
+            enum:
+            - "email"
+            - "popup"
+            - "textMessage"
+          message:
+            type: "string"
+    example:
+      date: "date"
+      duration: 0.80082819046101150206595775671303272247314453125
+      notification: "{}"
+      comments: "comments"
+      appointmentID: "appointmentID"
+      name: "name"
+      time: "time"
+  Request:
+    type: "object"
+    required:
+    - "r_id"
+    properties:
+      r_id:
+        type: "integer"
+      sender_id:
+        type: "integer"
+      receiver_id:
+        type: "integer"
+      message_id:
+        type: "integer"
+      accepted:
+        type: "boolean"
+  PatientAppointment:
+    required:
+    - "a_id"
+    properties:
+      a_id:
+        type: "integer"
+      date:
+        type: "string"
+      time:
+        type: "string"
+      name:
+        type: "string"
+      notification:
+        type: "object"
+        properties:
+          time:
+            type: "string"
+          preference:
+            type: "string"
+            enum:
+            - "email"
+            - "textMessage"
+          message:
+            type: "string"
