@@ -36,22 +36,24 @@ User stories aim to facilitate sensemaking of the platform's functionality and t
 
 ## GUI & UML class diagram notation
 ###### UI/UX
-The early-stage Graphical User Interface of Proaid is designed using the Figma editor. Some of the vector templates illustrating platform's design are provided in folder GUI.
-Figma project link: [here](https://www.figma.com/file/kZ3lZFH6XMoVevtMztTlK2/Desktop-feel-(LOGIN)?node-id=0%3A1)
+The early-stage Graphical User Interface of Proaid is designed using the Figma editor. Some of the vector templates illustrating platform's design are provided in folder *GUI*.
+Follow Figma project link [here](https://www.figma.com/file/kZ3lZFH6XMoVevtMztTlK2/Desktop-feel-(LOGIN)?node-id=0%3A1) for more.
 ###### UML - Static modeling
 Structural (or Static) view emphasizes the static structure of the system using objects, attributes, operations and relationships. It includes class diagrams and composite structure diagrams and it is developed in StarUML environment. Refer to files [classes.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/classes.mdj) / [use_case.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/use_case.mdj) for the *class and use case* diagram correspondingly.  
 
 
 ## Swagger API & Node-RED
-You can find the application API in SwaggerHub [here](https://app.swaggerhub.com/apis/Omada-Ergasias-7/Proaid/1.14.2#/) and the API documentation [here](https://app.swaggerhub.com/apis-docs/Omada-Ergasias-7/Proaid/1.14.2#/). The directory *python-flask-server* contains project files in order to develop the web-app with Python-Flask Framework and for Proaid API in .json format can be found in *proaid-api-swagger.json*.
+You can find the project API in SwaggerHub [here](https://app.swaggerhub.com/apis/Omada-Ergasias-7/Proaid/1.14.2#/) and the API documentation [here](https://app.swaggerhub.com/apis-docs/Omada-Ergasias-7/Proaid/1.14.2#/). The directory *python-flask-server* contains project files in order to develop the service with Python-Flask Framework. For the .json format of the Proaid API jump to *proaid-api-swagger.json*
 
-Node-RED flows in .json format demonstrating the online services of the application are stored in *flows.json*.
+Node-RED flows demonstrating the online services of the application are stored in *flows.json*.
  
 
-## Group 7
+## Contact
+Group 7 | SE2021 ECE Faculty of Engineering, AUTh<br/>
 Nikos Karagkiozidis<br/>
-Stavros Malakoudis <br/>
+Stavros Malakoudis<br/>
+Vasilis Polynopoulos<br/>
 Giorgos Tsakiridis<br/>
-Vasilis Polynopoulos
+ 
 
 
