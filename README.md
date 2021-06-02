@@ -17,10 +17,10 @@ Objective of *assignment2* is to:
 * build Node-RED flows 
 
 ## Users & external systems
-###### Users
+#### Users ####
 * Doctor [desktop user only]
 * Registered Patient [mobile user only]
-###### External systems
+#### External systems ####
 * Notification system
 * Registered patients database 
 * Unregistered patients database
@@ -35,10 +35,10 @@ User stories aim to facilitate sensemaking of the platform's functionality and t
 
 
 ## GUI & UML class diagram notation
-###### UI/UX
+#### UI/UX ####
 The early-stage Graphical User Interface of Proaid is designed using the Figma editor. Some of the vector templates illustrating platform's design are provided in folder *GUI*.
 Follow Figma project link [here](https://www.figma.com/file/kZ3lZFH6XMoVevtMztTlK2/Desktop-feel-(LOGIN)?node-id=0%3A1) for more.
-###### UML - Static modeling
+#### UML - Static modeling ####
 Structural (or Static) view emphasizes the static structure of the system using objects, attributes, operations and relationships. It includes class diagrams and composite structure diagrams and it is developed in StarUML environment. Refer to files [classes.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/classes.mdj) / [use_case.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/use_case.mdj) for the *class and use case* diagram correspondingly.  
 
 
@@ -49,11 +49,11 @@ Node-RED flows demonstrating the online services of the application are stored i
  
 
 ## Contact
-Group 7 | SE2021 ECE Faculty of Engineering, AUTh<br/>
+
 Nikos Karagkiozidis<br/>
 Stavros Malakoudis<br/>
 Vasilis Polynopoulos<br/>
 Giorgos Tsakiridis<br/>
- 
+Group 7 SE2021 | ECE Faculty of Engineering, AUTh<br/> 
 
 
