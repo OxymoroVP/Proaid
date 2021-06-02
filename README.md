@@ -10,7 +10,7 @@ This repository is a complete project made by students at the Aristotle Universi
 * set the Functional & Non-Functional requirements 
 * develop the User Stories (behavior scenarios) in Gherkin language 
 * interact with UI/UX Design and implement static modeling into UML class diagram notation
-
+   
 Objective of *assignment2* is to:
 * adjust corresponding design patterns to project 
 * struct a RESTful web-service using SwaggerHub
