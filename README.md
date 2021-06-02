@@ -3,7 +3,7 @@
 **Proaid** is a doctor appointment booking and scheduling assistant web-application used for medical purposes. The platform intends to offer a variety of features to both doctors and patients such as medical record sharing, appointment booking, schedule preview and agenda organizing in general. 
          
 <p align="center">
-  <img src="https://github.com/OxymoroVP/Proaid/blob/main/images/logo.png" width="350" height="350" />
+  <img src="https://github.com/OxymoroVP/Proaid/blob/main/GUI/logo.png" width="350" height="350" />
 </p>
 
 This repository is a complete project made by students at the Aristotle University of Thessaloniki taking the *Spring 2021 Software Engineering Course (8th Semester)*. Objective of *assignment1* is to:
