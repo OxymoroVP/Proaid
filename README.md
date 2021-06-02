@@ -1,4 +1,4 @@
-# Software Engineering - Proaid SHEESH
+# Software Engineering - Proaid 
 ## About
 **Proaid** is a doctor appointment booking and scheduling assistant web-application used for medical purposes. The platform intends to offer a variety of features to both doctors and patients such as medical record sharing, appointment booking, schedule preview and agenda organizing in general. 
          
