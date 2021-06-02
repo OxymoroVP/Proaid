@@ -50,10 +50,10 @@ Node-RED flows demonstrating the online services of the application are stored i
 
 ## Contact
 
-Nikos Karagkiozidis<br/>
-Stavros Malakoudis<br/>
+[Nikos Karagkiozidis](https://github.com/Mekanik4)<br/>
+[Stavros Malakoudis](https://github.com/Stavrenas)<br/>
 Vasilis Polynopoulos<br/>
-Giorgos Tsakiridis<br/>
+[Giorgos Tsakiridis](https://github.com/gtsaki99)<br/>
 Group 7 SE2021 | ECE Faculty of Engineering | AUTh<br/> 
 
 
