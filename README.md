@@ -54,6 +54,6 @@ Nikos Karagkiozidis<br/>
 Stavros Malakoudis<br/>
 Vasilis Polynopoulos<br/>
 Giorgos Tsakiridis<br/>
-Group 7 SE2021 | ECE Faculty of Engineering, AUTh<br/> 
+Group 7 SE2021 | ECE Faculty of Engineering | AUTh<br/> 
 
 
