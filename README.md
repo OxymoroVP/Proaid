@@ -31,7 +31,7 @@ User and System requirements of the application can be found in text format file
 [NonFunctionalReq.txt](https://github.com/OxymoroVP/Proaid/blob/main/NonFunctionalReq.txt) for an extended preview.
 
 ## User Stories 
-User stories aim to facilitate sensemaking of the platform's functionality and they are implemented into 12 features, developed in <br/>*Gherkin language*.
+User stories aim to facilitate sensemaking of the platform's functionality and they are implemented into 12 features, developed in *Gherkin language*.
 
 
 ## GUI & UML class diagram notation
