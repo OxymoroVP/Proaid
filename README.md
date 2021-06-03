@@ -36,8 +36,9 @@ User stories aim to facilitate sensemaking of the platform's functionality and t
 
 ## GUI & UML class diagram notation
 #### UI/UX ####
-The early-stage Graphical User Interface of Proaid is designed using the Figma editor. Some of the vector templates illustrating platform's design are provided in folder *GUI*.
-Follow Figma project link [here](https://www.figma.com/file/kZ3lZFH6XMoVevtMztTlK2/Desktop-feel-(LOGIN)?node-id=0%3A1) for more.
+The early-stage Graphical User Interface of Proaid is designed using the Figma editor. Some of the vector templates illustrating platform's design are provided in folder *GUI*. 
+Follow Figma project link [here](https://www.figma.com/file/kZ3lZFH6XMoVevtMztTlK2/Desktop-feel-(LOGIN)?node-id=0%3A1) for more.<br/> 
+//TODO: UPDATE DIRECTORY
 #### UML - Static modeling ####
 Structural (or Static) view emphasizes the static structure of the system using objects, attributes, operations and relationships. It includes class diagrams and composite structure diagrams and it is developed in StarUML environment. Refer to files [classes.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/classes.mdj) / [use_case.mdj](https://github.com/OxymoroVP/Proaid/blob/main/UML/use_case.mdj) for the *class and use case* diagram correspondingly.  
 
